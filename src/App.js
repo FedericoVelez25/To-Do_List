@@ -21,7 +21,7 @@ function App() {
 
 
   const filteredHandler = () => {
-    switch(status){
+    switch (status) {
       case 'completed':
         setFilteredTodos(todos.filter(todo => todo.completed === true));
         break;
@@ -35,10 +35,10 @@ function App() {
   };
 
   const saveLocalTodos = () => {
-      localStorage.setItem('todos', JSON.stringify(todos));
+    localStorage.setItem('todos', JSON.stringify(todos));
   };
   const getLocalTodos = () => {
-    if(localStorage.getItem('todos') === null){
+    if (localStorage.getItem('todos') === null) {
       localStorage.setItem('todos', JSON.stringify([]));
     } else {
       let todoLocal = JSON.parse(localStorage.getItem('todos'));
@@ -48,18 +48,18 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>Frito's To-Do List</h1>
+        <h1>Federico's To-Do List</h1>
       </header>
       <Form
         todos={todos}
         setTodos={setTodos}
         inputText={inputText}
-        setInputText={setInputText} 
+        setInputText={setInputText}
         setStatus={setStatus} />
-      <TodoList 
-      setTodos={setTodos} 
-      todos={todos}
-      filteredTodos={filteredTodos}  />
+      <TodoList
+        setTodos={setTodos}
+        todos={todos}
+        filteredTodos={filteredTodos} />
     </div>
   );
 }
